@@ -81,3 +81,18 @@ Original author of this project is Roemer.
 All credits for creating this project goes to him!
 
 ## WTF? -> Why The Fork?
+
+### Reason 1
+I wanted to enable this portion of configuration in the prepare script:
+
+    [IpServer.UdpServerUplink]
+    DoUpLink=True
+    UpdateMinutes=1
+    MasterServerPort=27900
+
+  Also, I wanted to make the `DoUpLink` property configurable in case you don't want your server to be visible in the server list in the game.
+
+### Reason 2
+I wanted to add some maps, skins and mods.
+I will do this later on.
+Also, I am not sure if Roemer's code extracts the given zip files that includes patches, maps, etc. I did not se any of the zipped maps when I ran the server for the first time.
