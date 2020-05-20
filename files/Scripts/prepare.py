@@ -34,6 +34,10 @@ def initial_setup():
     set_config_value(utIniFileServer, 'Engine.GameReplicationInfo', 'AdminName', 'UTAdmin')
     set_config_value(utIniFileServer, 'Engine.GameReplicationInfo', 'AdminEmail', 'no@one.com')
     set_config_value(utIniFileServer, 'Engine.GameReplicationInfo', 'MOTDLine1', 'Have Fun')
+    ## Replace / Add Master server connection information
+    set_config_value(utIniFileServer, 'IpServer.UdpServerUplink', 'DoUpLink', 'True')
+    set_config_value(utIniFileServer, 'IpServer.UdpServerUplink', 'UpdateMinutes', '1')
+    set_config_value(utIniFileServer, 'IpServer.UdpServerUplink', 'MasterServerPort', '27900')
     ## Replace / Add Admin and Game password
     set_config_value(utIniFileServer, 'Engine.GameInfo', 'AdminPassword', 'admin')
     set_config_value(utIniFileServer, 'Engine.GameInfo', 'GamePassword', '')
@@ -97,6 +101,8 @@ def prepare():
     set_config_to_environment('UT_ADMINNAME', utIniFileServer, 'Engine.GameReplicationInfo', 'AdminName')
     set_config_to_environment('UT_ADMINEMAIL', utIniFileServer, 'Engine.GameReplicationInfo', 'AdminEmail')
     set_config_to_environment('UT_MOTD1', utIniFileServer, 'Engine.GameReplicationInfo', 'MOTDLine1')
+    ## Replace / Add Master server connection information
+    set_config_to_environment('UT_DOUPLINK', utIniFileServer, 'IpServer.UdpServerUplink', 'DoUpLink')
     ## Replace / Add Admin and Game password
     set_config_to_environment('UT_ADMINPWD', utIniFileServer, 'Engine.GameInfo', 'AdminPassword')
     set_config_to_environment('UT_GAMEPWD', utIniFileServer, 'Engine.GameInfo', 'GamePassword')

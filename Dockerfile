@@ -25,7 +25,7 @@ ADD files/Maps-Packed/* /ut-data/
 ADD files/Maps/* /ut-data/Maps/
 
 # Environment variables
-ENV UT_SERVERURL="CTF-Face?game=BotPack.CTFGame?mutator=BotPack.InstaGibDM,MapVoteLAv2.BDBMapVote,FlagAnnouncementsV2.FlagAnnouncements"
+ENV UT_SERVERURL="CTF-Face?game=BotPack.CTFGame?mutator=BotPack.SniperArena,MapVoteLAv2.BDBMapVote,FlagAnnouncementsV2.FlagAnnouncements"
 
 # Create a link of this file to the missing file
 RUN ln -s /ut-server/System/libSDL-1.1.so.0 /ut-server/System/libSDL-1.2.so.0
