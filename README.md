@@ -19,7 +19,7 @@ This basically works by having this files in this volume and on start of the ser
 ## Environment Variables
 | Variable | Mandatory | Description |
 | -------- | --------- | ----------- |
-| UT_SERVERURL | Yes | This is the default uri for the server startup. By default, it looks someting like `CTF-Face?game=BotPack.CTFGame?mutator=BotPack.InstaGibDM,MapVoteLAv2.BDBMapVote,FlagAnnouncementsV2.FlagAnnouncements` |
+| UT_SERVERURL | Yes | This is the default uri for the server startup. By default, it looks like this `CTF-Face?game=BotPack.CTFGame?mutator=BotPack.SniperArena,MapVoteLAv2.BDBMapVote,FlagAnnouncementsV2.FlagAnnouncements` |
 | UT_SERVERNAME | No | If this variable is set, it will always override the server name in `UnrealTournament.ini` with this on startup. |
 | UT_ADMINNAME | No | If this variable is set, it will always override the admin name in `UnrealTournament.ini` with this on startup. |
 | UT_ADMINEMAIL | No | If this variable is set, it will always override the admin email in `UnrealTournament.ini` with this on startup. |
