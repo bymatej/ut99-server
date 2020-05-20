@@ -24,6 +24,7 @@ This basically works by having this files in this volume and on start of the ser
 | UT_ADMINNAME | No | If this variable is set, it will always override the admin name in `UnrealTournament.ini` with this on startup. |
 | UT_ADMINEMAIL | No | If this variable is set, it will always override the admin email in `UnrealTournament.ini` with this on startup. |
 | UT_MOTD1 | No | If this variable is set, it will always override the MOTD1 in `UnrealTournament.ini` with this on startup. |
+| UT_DOUPLINK | No | If this variable is set, it will always override the DoUpLink in `UnrealTournament.ini` with this on startup. Default is `true`.|
 | UT_ADMINPWD | No | If this variable is set, it will always override the admin password in `UnrealTournament.ini` with this on startup. |
 | UT_GAMEPWD | No | If this variable is set, it will always override the game password in `UnrealTournament.ini` with this on startup. |
 | UT_WEBADMINUSER | No | If this variable is set, it will always override the web admin username in `UnrealTournament.ini` with this on startup. |
@@ -71,7 +72,7 @@ When this mod is enabled, the clientside calculates if a hit was a hit or not an
 
 # Fork
 ## Original author
-Original author of this project is Roemer. 
+Original author of this project is Roemer.
 - His Git Repo: https://github.com/Roemer/ut99-server
 - His DockerHub repo: https://hub.docker.com/r/roemer/ut99-server
 - His posts on ut99 forums: https://ut99.org/viewtopic.php?t=13731
