@@ -25,10 +25,13 @@ ADD files/Maps-Packed/* /ut-data/
 ADD files/Maps/* /ut-data/Maps/
 
 # Environment variables
-ENV UT_SERVERURL="CTF-Face?game=BotPack.CTFGame?mutator=BotPack.SniperArena,MapVoteLAv2.BDBMapVote,FlagAnnouncementsV2.FlagAnnouncements"
+ENV UT_SERVERURL="CTF-Face?game=BotPack.CTFGame?mutator=BotPack.SniperArena,MapVoteLAv2.BDBMapVote,FlagAnnouncementsV2.FlagAnnouncements,ZeroPingPlus103.ZP_SniperArena,KickIdlePlayers2.KickIdlePlayers2"
 
 # Create a link of this file to the missing file
 RUN ln -s /ut-server/System/libSDL-1.1.so.0 /ut-server/System/libSDL-1.2.so.0
+
+# Add the IpServer.UdpServerUplink section and default properties in ini file
+RUN printf "\n\n[IpServer.UdpServerUplink]\nDoUpLink=False\n\nUpdateMinutes=1\nMasterServerPort=27900\n" >> /ut-server/System/UnrealTournament.ini
 
 EXPOSE 27900/udp 5580/tcp 7777/udp 7778/udp 7779/udp 7780/udp 7781/udp
 
