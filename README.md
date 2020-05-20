@@ -1,4 +1,6 @@
 # ut99-server
+This is just a fork of another project. See `Frok` for details.
+
 A dockerfile for a fully functional and easy configurable Unreal Tournament 99 server.
 This image is based on the original linux server 436 with all four bonus packs and the UTPGPatch451 patch for linux.
 It also includes some famous maps and mutators.
@@ -66,3 +68,15 @@ When this mode is enabled, detects if someone is killed because someone else pus
 ## ZeroPingPlus103
 This mod is added as a mutator. So it must be added to the mutators list to work.
 When this mod is enabled, the clientside calculates if a hit was a hit or not and tells this the server, effectively leading to 0 ping.
+
+# Fork
+## Original author
+Original author of this project is Roemer. 
+- His Git Repo: https://github.com/Roemer/ut99-server
+- His DockerHub repo: https://hub.docker.com/r/roemer/ut99-server
+- His posts on ut99 forums: https://ut99.org/viewtopic.php?t=13731
+- Another useful post: https://ut99.org/viewtopic.php?t=167
+
+All credits for creating this project goes to him!
+
+## WTF? -> Why The Fork?
