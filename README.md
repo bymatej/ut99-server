@@ -35,6 +35,18 @@ As mentioned above, there is one named volume that should point to `/ut-data` in
 This folder contains all important folders (`Maps`, `Music`, `Sounds`, `System`, `Textures`) where any non-standard files can be placed and will be loaded on the next restart of the server/container.
 Also all ini files can be found there in the `System` folder so they can be adjusted as well.
 
+## How I use it on my server
+I want a custom mountpoint so that I can easily navigate to my files and maintain my server. I mount the volume a little bit differently. Also, I specify some of the environment variables right in the run command. This is how it looks like:
+- I create a directory for the mount point (for volume):
+  ```
+  mkdir -p /home/username/games/ut99/public
+  ``` 
+- I run my docker run command: 
+  ```
+  docker run -d -e UT_SERVERNAME='My Cool UT server' -e UT_ADMINNAME='myadminusername' -e UT_ADMINEMAIL='games@bymatej.com' -e UT_MOTD1='The best message of the day ever' -e UT_ADMINPWD='MyCoolAdminPass' -e UT_WEBADMINUSER='mywebadminuser' -e UT_WEBADMINPWD='MyCoolWebAdminPass' --name ut99_public -p 5580:5580 -p 7777:7777/udp -p 7778:7778/udp --mount type=volume,source=ut99-data-public,target=/ut-data,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/home/username/games/ut99/public bymatej/ut99-server:latest
+  ```
+
+
 # Included Mods and Mutators
 
 ## CustomCrossHairScale
@@ -93,6 +105,6 @@ I wanted to enable this portion of configuration in the prepare script:
   Also, I wanted to make the `DoUpLink` property configurable in case you don't want your server to be visible in the server list in the game.
 
 ### Reason 2
-I wanted to add some maps, skins and mods.
-I will do this later on.
-Also, I am not sure if Roemer's code extracts the given zip files that includes patches, maps, etc. I did not se any of the zipped maps when I ran the server for the first time.
+I wanted to add some maps, skins and mods more easily. By default, the mount point for the docker volumes is at `/var/lib/docker/volumes/`. I wanted to change it. Turns out it is possible by mounting the volume with some extra attributes. Check out the "How I use it on my server" section.
+Basically, instead of `-v ut99-data-public:/ut-data` i use this `-mount type=volume,source=ut99-data-public,target=/ut-data,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/home/username/games/ut99/public`. The only "downside" to this is that I need to create the `/home/username/games/ut99/public` before executing the command. The only "upside" is that now I have the mount point in my home directory.
+It is a slight difference, but it makes me happy. :)
