@@ -43,11 +43,10 @@ def initial_setup():
     # Add server visibility in server browser inside game by adding correct URLs
     ## URLs
     set_config_value(utIniFileServer, 'Engine.GameEngine', 'ServerActors', 'IpServer.UdpServerUplink MasterServerAddress=utmaster.epicgames.com MasterServerPort=27900', True)
-    set_config_value(utIniFileServer, 'Engine.GameEngine', 'ServerActors', 'IpServer.UdpServerUplink MasterServerAddress=master.noccer.de MasterServerPort=27900', True)
     set_config_value(utIniFileServer, 'Engine.GameEngine', 'ServerActors', 'IpServer.UdpServerUplink MasterServerAddress=master.333networks.com MasterServerPort=27900', True)
     ## Replace / Add Master server connection information
     set_config_value(utIniFileServer, 'IpServer.UdpServerUplink', 'DoUpLink', 'True')
-    
+
     # Add Mutators
     ## CustomCrossHairScale
     set_config_value(utIniFileServer, 'Engine.GameEngine', 'ServerPackages', 'CCHS4', True)
