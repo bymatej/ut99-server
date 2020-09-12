@@ -108,3 +108,7 @@ I wanted to enable this portion of configuration in the prepare script:
 I wanted to add some maps, skins and mods more easily. By default, the mount point for the docker volumes is at `/var/lib/docker/volumes/`. I wanted to change it. Turns out it is possible by mounting the volume with some extra attributes. Check out the "How I use it on my server" section.
 Basically, instead of `-v ut99-data-public:/ut-data` i use this `-mount type=volume,source=ut99-data-public,target=/ut-data,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/home/username/games/ut99/public`. The only "downside" to this is that I need to create the `/home/username/games/ut99/public` before executing the command. The only "upside" is that now I have the mount point in my home directory.
 It is a slight difference, but it makes me happy. :)
+
+Sources: 
+- https://stackoverflow.com/questions/39496564/docker-volume-custom-mount-point
+- https://docs.docker.com/storage/volumes/#choose-the--v-or---mount-flag
